@@ -348,7 +348,7 @@
                 <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-3 tracking-tighter">Tabungan Bersama</h2>
                 
                 <div class="mb-10 text-center">
-                    <p class="text-sm font-bold text-slate-500 dark:text-slate-400" data-t="login_desc">Simpan data tabungan Anda dengan aman di awan. Nama Anda akan diambil otomatis dari akun Google.</p>
+                    <p class="text-sm font-bold text-slate-500 dark:text-slate-400" data-t="login_desc">Simpan data tabungan Anda dengan aman di awan menggunakan akun Google.</p>
                 </div>
                 
                 <!-- Google Login Button -->
@@ -356,6 +356,25 @@
                     <svg viewBox="0 0 24 24" class="w-6 h-6"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/><path fill="none" d="M1 1h22v22H1z"/></svg>
                     <span data-t="login_google">Masuk dengan Google</span>
                 </button>
+            </div>
+        </div>
+
+        <!-- NAME ENTRY (AFTER LOGIN) -->
+        <div id="modal-name-entry" class="fixed inset-0 z-[60] flex items-center justify-center p-8 hidden bg-white dark:bg-slate-900 max-w-[480px] mx-auto transition-opacity duration-500">
+            <div class="w-full text-center">
+                <div class="w-28 h-28 bg-indigo-50 dark:bg-indigo-900/30 rounded-full mx-auto flex items-center justify-center mb-10 shadow-inner border border-indigo-100 dark:border-indigo-900/30">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2830/2830284.png" alt="Logo" class="w-16 h-16">
+                </div>
+                <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-8 tracking-tighter">Konfirmasi Nama</h2>
+                <div class="text-left mb-8 relative">
+                    <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3 px-1">Nama Lengkap</label>
+                    <input type="text" id="onboarding-name" placeholder="Contoh: Leonardo Suprayogi" class="w-full p-5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-800 rounded-[1.25rem] font-bold text-xl outline-none focus:ring-4 focus:ring-indigo-500/10 transition-all text-slate-900 dark:text-white">
+                    <p class="text-[10px] text-rose-500 font-bold mt-3 px-2 flex items-start gap-1.5 leading-tight">
+                        <i data-lucide="info" class="w-3.5 h-3.5 shrink-0"></i>
+                        <span data-t="name_warning">*Peringatan: Nama tidak dapat diubah setelah disimpan. Mohon gunakan nama asli Anda.</span>
+                    </p>
+                </div>
+                <button id="btn-save-name" onclick="window.saveOnboardingName()" class="w-full py-5 bg-premium text-white font-black text-lg rounded-[1.5rem] shadow-xl">Masuk Aplikasi</button>
             </div>
         </div>
 
@@ -549,7 +568,8 @@
                 install_ios_desc: "Untuk pengguna iPhone/iPad (Safari):", install_ios_step1: "Tekan ikon Bagikan di bawah", install_ios_step2: "Pilih 'Tambah ke Layar Utama'",
                 install_android_desc: "Untuk pengguna Android (Chrome):", install_android_step1: "Tekan ikon Titik Tiga di atas", install_android_step2: "Pilih 'Tambahkan ke Layar Utama'",
                 install_prompt_title: "Install Aplikasi", install_prompt_desc: "Akses lebih cepat & mudah", install_btn: "Lihat Tutorial",
-                login_desc: "Simpan data tabungan Anda dengan aman di awan. Nama Anda akan diambil otomatis dari akun Google.", login_google: "Masuk dengan Google", logout: "Keluar (Logout)"
+                login_desc: "Simpan data tabungan Anda dengan aman di awan menggunakan akun Google.", login_google: "Masuk dengan Google", logout: "Keluar (Logout)",
+                name_warning: "*Peringatan: Nama tidak dapat diubah setelah disimpan. Mohon gunakan nama asli Anda."
             },
             en: {
                 welcome: "Welcome,", total_balance: "Total Balance", income: "Income", outcome: "Outcome",
@@ -568,7 +588,8 @@
                 install_ios_desc: "For iPhone/iPad users (Safari):", install_ios_step1: "Tap the Share icon at the bottom", install_ios_step2: "Select 'Add to Home Screen'",
                 install_android_desc: "For Android users (Chrome):", install_android_step1: "Tap the Three Dots icon at the top", install_android_step2: "Select 'Add to Home screen'",
                 install_prompt_title: "Install App", install_prompt_desc: "Faster access & easy to use", install_btn: "View Tutorial",
-                login_desc: "Save your data securely in the cloud. Your name will be synced automatically with your Google Account.", login_google: "Sign in with Google", logout: "Log Out"
+                login_desc: "Save your savings data securely in the cloud using your Google account.", login_google: "Sign in with Google", logout: "Log Out",
+                name_warning: "*Warning: Name cannot be changed once saved. Please use your real name."
             }
         };
 
@@ -669,37 +690,49 @@
         
         // Listener Status Login
         onAuthStateChanged(auth, (user) => {
+            const modalLogin = document.getElementById('modal-onboarding');
+            const modalName = document.getElementById('modal-name-entry');
+            const viewHome = document.getElementById('view-home');
+            const bottomNav = document.getElementById('bottom-nav');
+
             if (user) {
-                // User is logged in via Google
-                appData.user = user.displayName || 'Pengguna';
+                // Simpan credential sementara (nama belum di-fix kan)
                 appData.email = user.email;
                 appData.uid = user.uid;
                 window.saveLocal();
                 
-                const onboarding = document.getElementById('modal-onboarding');
-                if (onboarding) onboarding.classList.add('hidden');
-                
-                // Show Main UI
-                const viewHome = document.getElementById('view-home');
-                const bottomNav = document.getElementById('bottom-nav');
-                if(viewHome) viewHome.classList.remove('hidden');
-                if(bottomNav) bottomNav.classList.remove('hidden');
+                if (modalLogin) modalLogin.classList.add('hidden');
 
-                startRealtimeSync();
-                updateUI();
-            } else {
-                // Not Logged In, Show Onboarding
-                const onboarding = document.getElementById('modal-onboarding');
-                if (onboarding) {
-                    onboarding.classList.remove('hidden');
-                    setTimeout(() => onboarding.classList.remove('opacity-0'), 50);
+                if (!appData.user) {
+                    // Berhasil login Google, tapi belum set nama di database lokal kita
+                    if (modalName) {
+                        modalName.classList.remove('hidden');
+                        setTimeout(() => modalName.classList.remove('opacity-0'), 50);
+                        
+                        // Auto-fill dengan nama Google agar mudah
+                        const nameInput = document.getElementById('onboarding-name');
+                        if (nameInput && !nameInput.value && user.displayName) {
+                            nameInput.value = user.displayName;
+                        }
+                    }
+                } else {
+                    // Sudah login dan nama sudah pernah diset
+                    if (modalName) modalName.classList.add('hidden');
+                    if (viewHome) viewHome.classList.remove('hidden');
+                    if (bottomNav) bottomNav.classList.remove('hidden');
+
+                    startRealtimeSync();
+                    updateUI();
                 }
-                
-                // Hide Main UI
-                const viewHome = document.getElementById('view-home');
-                const bottomNav = document.getElementById('bottom-nav');
-                if(viewHome) viewHome.classList.add('hidden');
-                if(bottomNav) bottomNav.classList.add('hidden');
+            } else {
+                // Belum Login sama sekali
+                if (modalLogin) {
+                    modalLogin.classList.remove('hidden');
+                    setTimeout(() => modalLogin.classList.remove('opacity-0'), 50);
+                }
+                if (modalName) modalName.classList.add('hidden');
+                if (viewHome) viewHome.classList.add('hidden');
+                if (bottomNav) bottomNav.classList.add('hidden');
             }
         });
 
@@ -712,7 +745,7 @@
             try {
                 // Proses Login Google Popup
                 await signInWithPopup(auth, provider);
-                window.showToast("Berhasil login!");
+                window.showToast("Autentikasi berhasil!");
             } catch (error) {
                 console.error("Google Login Error", error);
                 if(error.code !== 'auth/popup-closed-by-user') {
@@ -721,6 +754,35 @@
                 btn.disabled = false;
                 btn.innerHTML = `<svg viewBox="0 0 24 24" class="w-6 h-6"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/><path fill="none" d="M1 1h22v22H1z"/></svg> <span data-t="login_google">${i18n[appData.language].login_google}</span>`;
             }
+        };
+
+        window.saveOnboardingName = () => {
+            const btn = document.getElementById('btn-save-name');
+            const nameEl = document.getElementById('onboarding-name');
+            if(!nameEl) return;
+            const name = nameEl.value.trim();
+            
+            if(!/^[a-zA-Z\s]+$/.test(name)) return alert("Nama hanya boleh berisi huruf.");
+            if(name.length < 3) return alert("Nama terlalu pendek.");
+            
+            btn.disabled = true; 
+            btn.innerHTML = createSpinner() + ' ...';
+            
+            appData.user = name; 
+            window.saveLocal();
+            
+            document.getElementById('modal-name-entry').classList.add('hidden');
+            
+            const viewHome = document.getElementById('view-home');
+            const bottomNav = document.getElementById('bottom-nav');
+            if(viewHome) viewHome.classList.remove('hidden');
+            if(bottomNav) bottomNav.classList.remove('hidden');
+
+            startRealtimeSync();
+            updateUI();
+            
+            btn.disabled = false;
+            btn.innerText = "Masuk Aplikasi";
         };
 
         window.logoutGoogle = async () => {
